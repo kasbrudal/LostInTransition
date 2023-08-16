@@ -1,4 +1,5 @@
 function loginForm() {
-   return <input type="text">Skriv in tekst</input>
+   return <h1>heheih</h1>
+   
 }
 export default loginForm
