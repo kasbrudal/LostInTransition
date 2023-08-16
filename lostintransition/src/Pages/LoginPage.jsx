@@ -1,7 +1,7 @@
-import LoginForm from "../Components/Login/Login";
-
+import LoginForm from '../Components/Login.jsx'
 function loginPage() {
     return (
+        
     <div className="App">
     <LoginForm/>
     </div>)

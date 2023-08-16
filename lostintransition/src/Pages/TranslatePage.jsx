@@ -1,5 +1,4 @@
-import TranslationText from "../Components/Translation/Translation"
-
+import TranslationText from "../Components/Translation";
 function TranslatePage() {
     return(
     <div>
