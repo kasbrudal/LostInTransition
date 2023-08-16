@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import LoginForm from './Components/Login/Login';
-import TranslationText from './Components/Translation/Translation';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes,NavLink } from 'react-router-dom';
 import LoginPage from './Pages/LoginPage.jsx'
 import ProfilePage from './Pages/ProfilePage.jsx'
 import TranslatePage from './Pages/TranslatePage.jsx'
 
 function App() {
-  const apiURL = 'https://lost-in-translation-production-2dd1.up.railway.app/'
+ /* const apiURL = 'https://lost-in-translation-production-2dd1.up.railway.app/'
 const apiKey = 'experis'
 
 fetch(`${apiURL}/translations`, {
@@ -33,17 +31,18 @@ fetch(`${apiURL}/translations`, {
     })
     .catch(error => {
     })
-
+*/
   return (
   <BrowserRouter>
+    
+    <NavLink to="/">Home</NavLink>
+    <NavLink to="/translate">Translate</NavLink>
     <div className="App">
       <Routes>
         <Route path='/' element={<LoginPage/>}></Route>
-        <Route path='/Translation' element={<TranslatePage/>}></Route>
-        <Route path='/Profile' element={<ProfilePage/>}></Route>
+        <Route path='/Translate' element={<TranslatePage/>}></Route>
       </Routes>    
         
-      
     </div>
     </BrowserRouter>
     
