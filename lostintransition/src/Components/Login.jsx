@@ -1,6 +1,6 @@
 import { Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 function loginForm() {
-   const apiURL = 'https://lost-in-translation-production-2dd1.up.railway.app/'
+   const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app'
    const apiKey = 'experis'
 
    fetch(`${apiURL}/translations`, {
