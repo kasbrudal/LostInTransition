@@ -1,11 +1,9 @@
 import LoginForm from '../Components/Login.jsx'
-function loginPage() {
-    
-
+export function LoginPage() {
     return (
         
-    <div className="App">
-    <LoginForm/>
+    <div>
+        <LoginForm/>
     </div>)
 }
-export default loginPage;
+export default LoginPage;
