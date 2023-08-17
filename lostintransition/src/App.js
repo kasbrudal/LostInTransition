@@ -5,8 +5,6 @@ import LoginPage from './Pages/LoginPage.jsx'
 import TranslatePage from './Pages/TranslatePage.jsx'
 
 function App() {
- 
-     
   return (
   <BrowserRouter>
     <NavLink to="/">Lost in translation</NavLink> <br/>
@@ -18,7 +16,7 @@ function App() {
       </Routes>    
         
     </div>
-    </BrowserRouter>
+  </BrowserRouter>
     
   );
 }
