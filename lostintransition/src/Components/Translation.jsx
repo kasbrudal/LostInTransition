@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { Form, FormControl, FormLabel, FormGroup } from "react-bootstrap"
-import Button from "react-bootstrap/Button"
 
 function translationText() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -33,7 +32,7 @@ function translationText() {
         <div>
             <img src="" alt="" srcset="" />
         {inputValue.split('').map((letter, index) => (
-            
+
           <img key={index} src={`../assets/individial_signs/${letter}.png`}  alt={letter}/>
         ))}
         </div>
