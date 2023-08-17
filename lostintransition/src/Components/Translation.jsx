@@ -3,15 +3,14 @@ import { Form, FormControl, FormLabel, FormGroup } from "react-bootstrap"
 
 function translationText() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, translateValue] = useState('');
 
     const handleInputChange = (event) => {
-      setInputValue(event.target.value);
+      translateValue(event.target.value);
     };
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      // Handle form submission if needed
     };
 
 
@@ -31,9 +30,13 @@ function translationText() {
         </Form>
         <div>
             <img src="" alt="" srcset="" />
-        {inputValue.split('').map((letter, index) => (
+        {inputValue.split('').map((imgValue, index) => (
+          <img key={index} 
+            src={require(`../assets/individial_signs/${imgValue}.png`)}  
+            alt={imgValue}
+            />
 
-          <img key={index} src={`../assets/individial_signs/${letter}.png`}  alt={letter}/>
+
         ))}
         </div>
       </div>
