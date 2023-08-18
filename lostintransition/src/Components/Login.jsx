@@ -4,6 +4,7 @@
 
    function LoginForm() {
       const [username, setUsername] = useState('');
+
       const navigate = useNavigate();
 
 
@@ -13,7 +14,6 @@
       };
 
       const handleUpload = () => {
-         if (username.trim() !== '') {
             const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
             const apiKey = 'experis';
 
@@ -38,16 +38,15 @@
             })
 
             .then(newUser => {
-               // Handle successful response here
                console.log('New user:', newUser);
-
+               localStorage.setItem("user.Id", newUser.id)
+               localStorage.setItem("user.Username", newUser.username)
                navigate("/translate")
             })
             .catch(error => {
-               // Handle error here
                console.error('Error:', error.message);
             });
-         }
+         
       };
 
       return ( 
@@ -62,6 +61,7 @@
             />
             <Button onClick={handleUpload}>Upload</Button>
             </FormGroup>
+            
          </Form>
       );
       }
