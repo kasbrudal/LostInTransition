@@ -8,7 +8,7 @@ export function navBar(){
 		<div>
 			<BrowserRouter>
 				<NavLink to="/">Lost in translation</NavLink> <br/>
-				<NavLink to="/translate">Translate</NavLink>
+				<NavLink to="/translate">Translate</NavLink> <br/>
 				<NavLink to="/profile">Profile</NavLink>
 		
 				<Routes>

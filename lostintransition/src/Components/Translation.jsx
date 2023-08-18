@@ -6,7 +6,8 @@ function translationText() {
     const [inputValue, translateValue] = useState('');
 
     const handleInputChange = (event) => {
-      translateValue(event.target.value);
+        translateValue(event.target.value.toLowerCase());
+    
     };
   
     const handleSubmit = (event) => {
@@ -29,14 +30,12 @@ function translationText() {
           </FormGroup>
         </Form>
         <div>
-            <img src="" alt="" srcset="" />
+
         {inputValue.split('').map((imgValue, index) => (
-          <img key={index} 
-            src={require(`../assets/individial_signs/${imgValue}.png`)}  
-            alt={imgValue}
+            <img key={index} 
+                src={require(`../assets/individial_signs/${imgValue}.png`)}  
+                alt={imgValue}
             />
-
-
         ))}
         </div>
       </div>

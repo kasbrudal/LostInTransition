@@ -11,18 +11,6 @@ export function App() {
     <header>
       <Header></Header>
     </header>
-  /*<BrowserRouter>
-    <NavLink to="/">Lost in translation</NavLink> <br/>
-    <NavLink to="/translate">Translate</NavLink>
-    <div className="App">
-      <Routes>
-        <Route path='/' element={<LoginPage/>}></Route>
-        <Route path='/Translate' element={<TranslatePage/>}></Route>
-      </Routes>    
-        
-    </div>
-    </BrowserRouter>*/
-    
   );
 }
 
