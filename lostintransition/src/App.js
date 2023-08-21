@@ -4,13 +4,17 @@ import './App.css';
 import LoginPage from './Pages/LoginPage.jsx'
 import TranslatePage from './Pages/TranslatePage.jsx'*/
 import Header from './Components/Header.jsx'
+import { Provider } from 'react-redux';
+import { store } from './Redux/store';
 
 export function App() {
 
   return (
-    <header>
-      <Header></Header>
-    </header>
+    <Provider store={store}>
+      <header>
+        <Header></Header>
+      </header>
+    </Provider>
   );
 }
 

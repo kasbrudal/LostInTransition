@@ -1,4 +1,59 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../Redux/userSlice';
+
+function TranslationsList() {
+    const currentUser = useSelector(selectUser);
+    const [translations, setTranslations] = useState([]);
+    const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
+    const apiKey = 'experis';
+    
+
+    useEffect(() => {
+        if (!currentUser) {
+            return;
+        }
+        fetch(`${apiURL}/translations/${currentUser.id}`, {
+            headers: {
+                'X-API-Key': apiKey,
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Could not fetch translations');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Assuming the returned data has a translations field which is an array.
+            const lastTenTranslations = data.translations.slice(-10);
+            setTranslations(lastTenTranslations);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }, [currentUser]);
+
+    return (
+        <div>
+            <h2>Last 10 Translations</h2>
+            <ul>
+                {translations.map((translation, index) => (
+                    <li key={index}>
+                        {translation}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+export default TranslationsList;
+
+
+
+
+/*import { useState, useEffect } from 'react';
 import Translation from './Translation.jsx';
 
 function TranslationsList() {
@@ -36,10 +91,9 @@ function TranslationsList() {
                     </li>
                 ))}
             </ul>
-            {/*{translations && translations.map(translation => 
-            <Translation apiKey={translation.id} currentTranslation={translation}></Translation>)}*/}
+   
         </div>
     )
 }
 
-export default TranslationsList;
+export default TranslationsList;*/

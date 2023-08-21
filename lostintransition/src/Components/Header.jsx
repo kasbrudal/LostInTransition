@@ -5,7 +5,7 @@ import { ProfilePage } from '../Pages/ProfilePage';
 
 export function navBar(){  
 	return (
-		<div>
+		
 			<BrowserRouter>
 				<NavLink to="/">Lost in translation</NavLink> <br/>
 				<NavLink to="/translate">Translate</NavLink> <br/>
@@ -17,6 +17,5 @@ export function navBar(){
 					<Route path={'/Profile'} element={<ProfilePage/>}></Route>
 				</Routes>
 			</BrowserRouter>
-		</div>
 )}
 export default navBar
