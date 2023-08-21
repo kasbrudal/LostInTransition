@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Form, FormControl, FormGroup, FormLabel, Button } from "react-bootstrap";
 import { useDispatch } from 'react-redux';
 import { setUser } from '../Redux/userSlice';
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const [username, setUsername] = useState('');
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleInputChange = (event) => {
@@ -34,11 +36,10 @@ function LoginForm() {
         return response.json();
       })
       .then(newUser => {
-        // Handle successful response here
         console.log('New user:', newUser);
+        navigate("/translate");
       })
       .catch(error => {
-        // Handle error here
         console.error('Error:', error.message);
       })
       .then(newUser => {
