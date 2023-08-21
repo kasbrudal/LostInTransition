@@ -3,17 +3,17 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../Redux/userSlice';
 
 function TranslationsList() {
-    const currentUser = useSelector(selectUser);
+    //const currentUser = useSelector(selectUser);
+    const userId = 1;
     const [translations, setTranslations] = useState([]);
     const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
     const apiKey = 'experis';
     
-
     useEffect(() => {
-        if (!currentUser) {
+        if (!userId) {
             return;
         }
-        fetch(`${apiURL}/translations/${currentUser.id}`, {
+        fetch(`${apiURL}/translations/${userId}`, {
             headers: {
                 'X-API-Key': apiKey,
             },
@@ -32,15 +32,15 @@ function TranslationsList() {
         .catch(error => {
             console.error(error);
         });
-    }, [currentUser]);
+    }, [userId]);
 
     return (
         <div>
             <h2>Last 10 Translations</h2>
             <ul>
-                {translations.map((translation, index) => (
+                {translations.map((translations, index) => (
                     <li key={index}>
-                        {translation}
+                        {translations} 
                     </li>
                 ))}
             </ul>

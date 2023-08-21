@@ -8,17 +8,16 @@ function Translator() {
     const [translations, setTranslations] = useState([]);
     const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
     const apiKey = 'experis';
-    const currentUser = useSelector(selectUser);
+    //const currentUser = useSelector(selectUser);
+    const userId = 1;
 
     const handleInputChange = (event) => {
         setInputValue(event.target.value);
       };
       
       const handleTranslation = () => {
-        // Implement the PATCH request here and update the translations state
-        // Inside the handleTranslation function:
 
-        fetch(`${apiURL}/translations/${currentUser.id}`, {
+        fetch(`${apiURL}/translations/${userId}`, {
         method: 'PATCH',
         headers: {
             'X-API-Key': apiKey,
@@ -35,7 +34,7 @@ function Translator() {
         return response.json();
         })
         .then(updatedUser => {
-        // Set the updated translations to our state
+      
         setTranslations(updatedUser.translations);
         })
         .catch(error => {
