@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
 function TranslationsList() {
-
-    const currentUser = localStorage.getItem("userId")
+    const currentUser = localStorage.getItem("userId");
     const [translations, setTranslations] = useState([]);
     const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
     const apiKey = 'experis'; 
 
     useEffect(() => {
-        if (!currentUser || !currentUser.userId) {
+        if (!currentUser) {
             return;
         }
-        fetch(`${apiURL}/translations/${currentUser.userId}`, {
+        fetch(`${apiURL}/translations/${currentUser}`, {
             headers: {
                 'X-API-Key': apiKey,
             },
@@ -35,12 +34,19 @@ function TranslationsList() {
         <div>
             <h2>Last 10 Translations</h2>
             <ul>
-                {translations.map((translation, index) => (
-                    <li key={index}>
-                        {translation} 
-                    </li>
+                {translations.map((translation, translationIndex) => (
+                    <div key={translationIndex}>
+                            <li> {translation.split('').map((letter, letterIndex) => (
+                                <img
+                                    key={letterIndex}
+                                    src={require(`../assets/individial_signs/${letter}.png`)}
+                                    alt={letter}
+                                />
+                                ))}
+                            </li>
+                    </div>
                 ))}
-            </ul>
+                </ul>
         </div>
     );
 }

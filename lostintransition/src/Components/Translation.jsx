@@ -18,10 +18,15 @@ function Translator() {
   }, [dispatch]);
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    const newInputValue = event.target.value.toLowerCase().replace(/[^a-z]/g, '');
+    setInputValue(newInputValue);
   };
+  
+  
+  
 
   const handleTranslation = () => {
+    
     fetch(`${apiURL}/translations/${currentUserId}`, {
       method: 'PATCH',
       headers: {
