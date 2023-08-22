@@ -1,14 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { useState } from 'react';
 
-const initialState = {
+/*const initialState = {
     currentUser: null,
     translations: []
-};
+};*/
+export const getCurrentUser = createAsyncThunk("username?=kasper",
+async()=>{
+    const response  = await fetch('https://lost-in-translation-production-9e97.up.railway.app')
+    const userData = await response.json()
+    return userData
+})
 
 export const userSlice = createSlice({
     name: 'user',
-    initialState,
+    initialState: {
+        username: "no name",
+        translations: []
+    },
     reducers: {
         setUser: (state, action) => { 
             state.currentUser = action.payload;
