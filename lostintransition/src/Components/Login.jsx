@@ -37,6 +37,7 @@ function LoginForm() {
         // Username is already registered, update the Redux store
         dispatch(setUser(userData[0]));
         console.log('Existing user:', userData[0]);
+        localStorage.setItem("userId", JSON.parse(userData[0].id))
         navigate('/translate')
       } else {
         // Username is not registered, create a new user
@@ -60,6 +61,7 @@ function LoginForm() {
         .then(newUser => {
           dispatch(setUser(newUser));
           console.log('New user:', newUser);
+          localStorage.setItem("userId", newUser.id)
           navigate('translate')
         })
         .catch(error => {
