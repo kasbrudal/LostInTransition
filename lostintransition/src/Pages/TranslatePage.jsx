@@ -1,4 +1,5 @@
 import TranslationText from "../Components/Translation";
+import routeGuard from "../Components/RouteGuard";
 export function TranslatePage() {
     return(
         <div>
@@ -7,4 +8,4 @@ export function TranslatePage() {
     )
 }
 
-export default TranslatePage;
+export default routeGuard(TranslatePage);

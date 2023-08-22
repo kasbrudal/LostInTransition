@@ -1,4 +1,5 @@
 import TranslationsList from '../Components/TranslationsList.jsx'
+import routeGuard from '../Components/RouteGuard.jsx';
 
 export function ProfilePage() {
     return (
@@ -8,4 +9,4 @@ export function ProfilePage() {
     )
 }
 
-export default ProfilePage;
+export default routeGuard(ProfilePage);

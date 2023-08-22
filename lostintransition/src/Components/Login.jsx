@@ -18,7 +18,6 @@ function LoginForm() {
     const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
     const apiKey = 'experis';
 
-    // Check if the username is already registered
     fetch(`${apiURL}/translations?username=${username}`, {
       method: 'GET',
       headers: {
@@ -34,13 +33,14 @@ function LoginForm() {
     })
     .then(userData => {
       if (userData.length > 0) {
-        // Username is already registered, update the Redux store
+
         dispatch(setUser(userData[0]));
         console.log('Existing user:', userData[0]);
         localStorage.setItem("userId", JSON.parse(userData[0].id))
+        localStorage.setItem('username', userData.username)
         navigate('/translate')
       } else {
-        // Username is not registered, create a new user
+
         return fetch(`${apiURL}/translations`, {
           method: 'POST',
           headers: {
@@ -62,6 +62,8 @@ function LoginForm() {
           dispatch(setUser(newUser));
           console.log('New user:', newUser);
           localStorage.setItem("userId", newUser.id)
+          localStorage.setItem('username', newUser.username)
+
           navigate('translate')
         })
         .catch(error => {
