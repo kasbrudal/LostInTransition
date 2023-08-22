@@ -36,7 +36,7 @@ function LoginForm() {
 
         dispatch(setUser(userData[0]));
         console.log('Existing user:', userData[0]);
-        localStorage.setItem("userId", JSON.parse(userData[0].id))
+        localStorage.setItem("userId", userData[0].id)
         localStorage.setItem('username', userData.username)
         navigate('/translate')
       } else {

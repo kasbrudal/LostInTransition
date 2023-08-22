@@ -8,6 +8,15 @@ function Translator() {
   const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
   const apiKey = 'experis';
 
+    const [refreshKey, setRefreshKey] = useState(0);
+
+    useEffect(() => {
+        const userId = localStorage.getItem("userId");
+        if (userId) {
+            setRefreshKey(prevKey => prevKey + 1);
+        }
+    }, []);
+
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   console.log(user.id)
@@ -22,9 +31,6 @@ function Translator() {
     setInputValue(newInputValue);
   };
   
-  
-  
-
   const handleTranslation = () => {
     
     fetch(`${apiURL}/translations/${currentUserId}`, {
@@ -48,7 +54,7 @@ function Translator() {
   };
 
   return (
-    <div>
+    <div key={refreshKey}>
       <input 
         type="text"
         value={inputValue}
