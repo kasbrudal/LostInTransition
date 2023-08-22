@@ -1,0 +1,29 @@
+@import url('https://fonts.google.com/specimen/Love+Ya+Like+A+Sister?query=Love+Ya+Like+a+sister');
+@import url('https://fonts.google.com/specimen/Sanchez?query=Sanchez');
+body{
+    font-family: 'Sanchez', serif;}
+.header{
+    font-family: 'Love Ya Like A Sister', cursive;    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #E7B355;
+}
+.loginPage{
+    background-color: #FFC75F;
+}
+.infoBox{
+    background-color: #FFC75F;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.loginForm{
+    border: 1px solid black;
+}
+.infoText{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

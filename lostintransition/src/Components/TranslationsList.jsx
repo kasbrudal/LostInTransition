@@ -29,10 +29,32 @@ function TranslationsList() {
             console.error(error);
         });
     }, [currentUser]);
+    const handleRemoveTranslations = () => {
+        fetch(`${apiURL}/translations/${currentUser}`, {
+            method: 'PATCH', 
+            headers: {
+                'X-API-Key': apiKey,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                translations: [] 
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Kunne ikke slette');
+            }
+            setTranslations([]); 
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    };
 
     return (
         <div>
             <h2>Last 10 Translations</h2>
+            <button onClick={handleRemoveTranslations}>Slett alle oversettinger</button>
             <ul>
                 {translations.map((translation, translationIndex) => (
                     <div key={translationIndex}>

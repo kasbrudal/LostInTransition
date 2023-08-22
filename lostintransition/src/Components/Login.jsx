@@ -3,6 +3,8 @@ import { Form, FormControl, FormGroup, FormLabel, Button } from "react-bootstrap
 import { useDispatch } from 'react-redux';
 import { setUser } from '../Redux/userSlice';
 import { useNavigate } from "react-router-dom";
+import '../css/login.css'
+
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -37,7 +39,7 @@ function LoginForm() {
         dispatch(setUser(userData[0]));
         console.log('Existing user:', userData[0]);
         localStorage.setItem("userId", JSON.parse(userData[0].id))
-        localStorage.setItem('username', userData.username)
+        localStorage.setItem('username', userData[0].username)
         navigate('/translate')
       } else {
 
@@ -77,20 +79,32 @@ function LoginForm() {
   }
 };
 
-
   return ( 
-    <Form>
-      <FormGroup className="mb-3">
-        <FormLabel>Write your name</FormLabel>
-        <FormControl 
-          type="text" 
-          placeholder="Write here" 
-          value={username}
-          onChange={handleInputChange}
-        />
-        <Button onClick={handleUpload}>Upload</Button>
-      </FormGroup>
-    </Form>
+    <div className="loginPage">
+      <div className="infoBox">
+        <div>
+          <img src={require("../assets/Logo.png" )} 
+          alt="Logo"
+          width='200px'/>
+        </div>
+        <div className="infoText">
+          <h1>Lost in Translation</h1>
+          <h3>Get started</h3>
+        </div>
+      </div>
+      <Form> 
+        <FormGroup className="mb-3">
+          <FormLabel>Write your name</FormLabel>
+          <FormControl 
+            type="text" 
+            placeholder="Write here" 
+            value={username}
+            onChange={handleInputChange}
+          />
+          <Button onClick={handleUpload}>Upload</Button>
+        </FormGroup>
+      </Form>
+    </div>
   );
 }
 
