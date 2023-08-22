@@ -34,7 +34,7 @@ function Translator() {
     })
     .then(response => response.json())
     .then(updatedUser => {
-      dispatch(addTranslation(inputValue)); // Dispatch the translation to Redux store
+      dispatch(addTranslation(inputValue));
       setTranslations(updatedUser.translations);
     })
     .catch(error => {

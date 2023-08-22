@@ -5,7 +5,7 @@ function TranslationsList() {
     const currentUser = localStorage.getItem("userId")
     const [translations, setTranslations] = useState([]);
     const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
-    const apiKey = 'experis'; // Consider handling apiKey securely
+    const apiKey = 'experis'; 
 
     useEffect(() => {
         if (!currentUser || !currentUser.userId) {
@@ -23,7 +23,6 @@ function TranslationsList() {
             return response.json();
         })
         .then(data => {
-            // Assuming the returned data has a translations field which is an array.
             const lastTenTranslations = data.translations.slice(-10);
             setTranslations(lastTenTranslations);
         })

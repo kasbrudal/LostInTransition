@@ -5,17 +5,17 @@ import { ProfilePage } from '../Pages/ProfilePage';
 
 export function navBar(){  
 	return (
-		
-			<BrowserRouter>
-				<NavLink to="/">Lost in translation</NavLink> <br/>
-				<NavLink to="/translate">Translate</NavLink> <br/>
-				<NavLink to="/profile">Profile</NavLink>
-		
-				<Routes>
-					<Route path={'/'} element={<LoginPage/>}></Route>
-					<Route path={'/Translate'} element={<TranslatePage/>}></Route>
-					<Route path={'/Profile'} element={<ProfilePage/>}></Route>
-				</Routes>
-			</BrowserRouter>
-)}
+		<BrowserRouter>
+			<NavLink to="/">Lost in translation</NavLink> <br/>
+			<NavLink to="/translate">Translate</NavLink> <br/>
+			<NavLink to="/profile">Profile</NavLink>
+	
+			<Routes>
+				<Route path={'/'} element={<LoginPage/>}></Route>
+				<Route path={'/Translate'} element={<TranslatePage/>}></Route>
+				<Route path={'/Profile'} element={<ProfilePage/>}></Route>
+			</Routes>
+		</BrowserRouter>
+	)}
+	
 export default navBar
