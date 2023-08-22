@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
 import LoginPage from './Pages/LoginPage.jsx';
@@ -16,10 +16,14 @@ export function App() {
   return (
    
     <header>
+
       <BrowserRouter>
-        <NavLink to="/">Lost in translation</NavLink> <br/>
-				<NavLink to="/translate">Translate</NavLink> <br/>
-				{ isLoggedIn && <NavLink to="/profile">Profile</NavLink>}
+        <div className='header'>
+          <h1>Lost in translation</h1>
+          <NavLink to="/">Lost in translation</NavLink> <br/>
+          <NavLink to="/translate">Translate</NavLink> <br/>
+          { isLoggedIn && <NavLink to="/profile">Profile</NavLink>}
+        </div>
 
         <Routes>
           <Route path={'/'} element={<LoginPage/>}></Route>
