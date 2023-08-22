@@ -8,19 +8,14 @@ import '../css/login.css'
 
 export function navBar(){  
 	return (
-		<BrowserRouter>
-		<div class="header">
-			<h1>Lost in translation</h1>
+		<div>
+			<BrowserRouter>
 			<NavLink to="/">Lost in translation</NavLink> <br/>
 			<NavLink to="/translate">Translate</NavLink> <br/>
 			<NavLink to="/profile">Profile</NavLink>
+			</BrowserRouter>
 		</div>
-			<Routes>
-				<Route path={'/'} element={<LoginPage/>}></Route>
-				<Route path={'/Translate'} element={<TranslatePage/>}></Route>
-				<Route path={'/Profile'} element={<ProfilePage/>}></Route>
-			</Routes>
-		</BrowserRouter>
+		
 	)}
 	
 export default navBar

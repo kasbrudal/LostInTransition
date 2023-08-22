@@ -1,9 +1,9 @@
-import TranslationText from "../Components/Translation";
+import Translator from "../Components/Translation";
 import routeGuard from "../Components/RouteGuard";
 export function TranslatePage() {
     return(
         <div>
-            <TranslationText/>
+            <Translator/>
         </div>
     )
 }
