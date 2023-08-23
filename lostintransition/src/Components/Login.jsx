@@ -92,18 +92,20 @@ function LoginForm() {
           <h3>Get started</h3>
         </div>
       </div>
+      <div>
       <Form> 
         <FormGroup className="mb-3">
-          <FormLabel>Write your name</FormLabel>
+          <FormLabel>What's your name?</FormLabel>
           <FormControl 
             type="text" 
-            placeholder="Write here" 
+            placeholder="Your name" 
             value={username}
             onChange={handleInputChange}
           />
-          <Button onClick={handleUpload}>Upload</Button>
+          <Button onClick={handleUpload}>Enter</Button>
         </FormGroup>
       </Form>
+      </div>
     </div>
   );
 }
