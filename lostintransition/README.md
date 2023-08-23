@@ -1,3 +1,12 @@
+# Lost in tranlsation
+
+Lost in translation is a sign language translator website.
+Users may login and translate words to sign language and display the last 10 translations on their profile page.
+
+# Installation
+
+In the project directory, run "npm install" in the command prompt.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
