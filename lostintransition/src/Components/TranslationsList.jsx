@@ -65,6 +65,7 @@ function TranslationsList() {
                                 key={letterIndex}
                                 src={require(`../assets/individial_signs/${letter}.png`)}
                                 alt={letter}
+                                width={'100px'}
                             />
                             ))}
                         </li>
