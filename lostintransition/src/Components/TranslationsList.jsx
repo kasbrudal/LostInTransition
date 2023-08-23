@@ -29,6 +29,7 @@ function TranslationsList() {
             console.error(error);
         });
     }, [currentUser]);
+
     const handleRemoveTranslations = () => {
         fetch(`${apiURL}/translations/${currentUser}`, {
             method: 'PATCH', 
@@ -58,17 +59,17 @@ function TranslationsList() {
             <ul>
                 {translations.map((translation, translationIndex) => (
                     <div key={translationIndex}>
-                            <li> {translation.split('').map((letter, letterIndex) => (
-                                <img
-                                    key={letterIndex}
-                                    src={require(`../assets/individial_signs/${letter}.png`)}
-                                    alt={letter}
-                                />
-                                ))}
-                            </li>
+                        <li> {translation.split('').map((letter, letterIndex) => (
+                            <img
+                                key={letterIndex}
+                                src={require(`../assets/individial_signs/${letter}.png`)}
+                                alt={letter}
+                            />
+                            ))}
+                        </li>
                     </div>
                 ))}
-                </ul>
+            </ul>
         </div>
     );
 }

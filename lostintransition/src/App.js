@@ -16,15 +16,7 @@ export function App() {
   return (
    
     <header>
-
       <BrowserRouter>
-        <div className='header'>
-          <h1>Lost in translation</h1>
-          <NavLink to="/">Lost in translation</NavLink> <br/>
-          <NavLink to="/translate">Translate</NavLink> <br/>
-          { isLoggedIn && <NavLink to="/profile">Profile</NavLink>}
-        </div>
-
         <Routes>
           <Route path={'/'} element={<LoginPage/>}></Route>
           <Route path={'/Translate'} element={<TranslatePage/>}></Route>
