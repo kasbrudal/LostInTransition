@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser, addTranslation, getCurrentUser } from "../Redux/userSlice.js";
+import '../css/login.css'
 
 function Translator() {
   const [inputValue, setInputValue] = useState('');
@@ -29,6 +30,7 @@ function Translator() {
   const handleInputChange = (event) => {
     const newInputValue = event.target.value.toLowerCase().replace(/[^a-z]/g, '');
     setInputValue(newInputValue);
+    
   };
   
   const handleTranslation = () => {
@@ -47,6 +49,7 @@ function Translator() {
     .then(updatedUser => {
       dispatch(addTranslation(inputValue));
       setTranslations(updatedUser.translations);
+      setInputValue('')
     })
     .catch(error => {
       console.error(error);
@@ -54,34 +57,33 @@ function Translator() {
   };
 
   return (
-    <div key={refreshKey}>
-      <input 
-        type="text"
-        value={inputValue}
-        onChange={handleInputChange}
-        maxLength={40}
-      />
-      <button onClick={handleTranslation}>Translate</button>
-      <div>
-        {inputValue.split('').map((imgValue, index) => (
-          <img
-            key={index}
-            src={require(`../assets/individial_signs/${imgValue}.png`)}
-            alt={imgValue}
-          />
-        ))}
+    
+    <div key={refreshKey} className="translate">
+      <div className="translateInput">
+        <input 
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          maxLength={40}
+          className="inputField"
+        />
+        <button onClick={handleTranslation} className="button">Translate</button>
       </div>
+      
       <div className="translated-box">
         <h1>Oversatt tekst</h1>
         {translations.map((translation, translationIndex) => (
           <div key={translationIndex}>
-            {translation.split('').map((letter, letterIndex) => (
-              <img
-                key={letterIndex}
-                src={require(`../assets/individial_signs/${letter}.png`)}
-                alt={letter}
-              />
-            ))}
+          <li>  
+              {translation.split('').map((letter, letterIndex) => (
+                <img
+                  key={letterIndex}
+                  src={require(`../assets/individial_signs/${letter}.png`)}
+                  alt={letter}
+                  width="50px"
+                />
+              ))}
+            </li>
           </div>
         ))}
       </div>

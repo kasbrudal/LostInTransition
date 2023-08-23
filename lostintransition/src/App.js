@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './Pages/LoginPage.jsx';
 import TranslatePage from './Pages/TranslatePage.jsx';
 import ProfilePage from './Pages/ProfilePage.jsx';

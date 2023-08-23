@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../css/login.css'
 
 function TranslationsList() {
     const currentUser = localStorage.getItem("userId");
@@ -53,7 +54,7 @@ function TranslationsList() {
     };
 
     return (
-        <div>
+        <div className='translate'>
             <h2>Last 10 Translations</h2>
             <button onClick={handleRemoveTranslations}>Slett alle oversettinger</button>
             <ul>

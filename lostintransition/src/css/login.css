@@ -2,12 +2,53 @@
 @import url('https://fonts.google.com/specimen/Sanchez?query=Sanchez');
 body{
     font-family: 'Sanchez', serif;}
+
+
+.translateHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.translate{
+    background-color: #FFC75F;
+    min-height: 300px;
+    margin: 0;
+}
+.translateInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputField{
+       
+    width: 50%;
+    padding: 22px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.button{
+    border-radius: 12px;
+    height: 60px;
+}
+.translated-box{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-left: 60px;
+}
 .header{
     font-family: 'Love Ya Like A Sister', cursive;    
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-around;
     background-color: #E7B355;
+}
+.profileElmnt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .loginPage{
     background-color: #FFC75F;
