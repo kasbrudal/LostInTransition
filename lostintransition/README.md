@@ -4,8 +4,8 @@ Lost in translation is an Angular sign language translator website.
 Users may login and translate words to sign language and display the last 10 translations on their profile page.
 
 # Description
-
-
+The vercel link to the project
+https://lost-in-transition.vercel.app/
 
 # Features
 
