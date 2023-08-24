@@ -3,6 +3,8 @@
 Lost in translation is a sign language translator website made in Angular framework by Jacob and Kasper.
 
 # Description
+The solution can be viewed at:
+https://lost-in-transition.vercel.app/
 
 The website is created with the javascript framework Angular, Node.js, and Railway.
 The application was deployed to Vercel.
