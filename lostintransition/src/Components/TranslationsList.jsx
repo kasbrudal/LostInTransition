@@ -55,7 +55,7 @@ function TranslationsList() {
         })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Kunne ikke slette');
+                throw new Error('could not delete');
             }
             setTranslations([]); 
         })
@@ -67,7 +67,7 @@ function TranslationsList() {
     return (
         <div className='translate'>
             <h2>Last 10 Translations</h2>
-            <button onClick={handleRemoveTranslations}>Slett alle oversettinger</button>
+            <button onClick={handleRemoveTranslations}>Clear translations</button>
             <ul>
                 {translations.map((translation, translationIndex) => (
                     <div key={translationIndex}>
