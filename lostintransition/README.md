@@ -1,17 +1,15 @@
 # Lost in tranlsation
 
-Lost in translation is an Angular sign language translator website.
-Users may login and translate words to sign language and display the last 10 translations on their profile page.
+Lost in translation is a sign language translator website made in Angular framework.
 
 # Description
 
+The website is created with the javascript framework Angular, Node.js, and Railway to host the server.
+Redux is used for state management
+Users may login and translate words to sign language and display the last 10 translations on their profile page. This list can also ble cleared from the page via button.
+A RouteGuard was created to prevent non-logged in users to access other pages than the login page.
+The website is style using simple CSS.
 
-
-# Features
-
-# Libraries
-
-Angular, 
 
 # Component tree
 

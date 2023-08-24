@@ -71,7 +71,7 @@ function Translator() {
       </div>
       
       <div className="translated-box">
-        <h1>Oversatt tekst</h1>
+        <h1>Translation:</h1>
         {translations.map((translation, translationIndex) => (
           <div key={translationIndex}>
           <li>  
