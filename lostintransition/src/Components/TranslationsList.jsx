@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../css/login.css'
+import {  useNavigate } from 'react-router-dom';
 
 function TranslationsList() {
     const currentUser = localStorage.getItem("userId");
     const [translations, setTranslations] = useState([]);
     const apiURL = 'https://lost-in-translation-production-9e97.up.railway.app';
     const apiKey = 'experis'; 
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (!currentUser) {
@@ -30,6 +33,14 @@ function TranslationsList() {
             console.error(error);
         });
     }, [currentUser]);
+
+    const handleLogout = () => {
+        localStorage.removeItem("userId");
+        localStorage.removeItem("username");
+
+        navigate("/");
+    };
+
 
     const handleRemoveTranslations = () => {
         fetch(`${apiURL}/translations/${currentUser}`, {
@@ -72,6 +83,8 @@ function TranslationsList() {
                     </div>
                 ))}
             </ul>
+            <button onClick={handleLogout}>Logout</button>
+
         </div>
     );
 }

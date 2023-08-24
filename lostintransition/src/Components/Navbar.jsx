@@ -13,7 +13,7 @@ export function Navbar() {
             </div>
             <div className="profileElmnt">
                 <NavLink to="/profile">
-                
+                <p>Profile</p>
                 <img src={require("../assets/user1.png" )} 
                     alt="Logo"
                     width='100px'/> 
